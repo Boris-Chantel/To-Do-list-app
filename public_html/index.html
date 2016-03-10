@@ -1,0 +1,64 @@
+
+        <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        ul {
+            list-style: none;
+            padding: 10px;
+            margin: 10px;
+            width: 40%;
+            float: left;
+            border: 1px solid #333;
+            background:#eee;
+        }
+    </style>
+    
+    
+  </head>
+  <body>
+  <h1>To-do List</h1>
+        
+        <input type="text" id="input"/>
+        <button id="btn">ADD</button>
+        
+        <hr/>
+        
+        <ul id="todo">
+         
+         </ul>
+        <ul id="done">
+        
+        </ul>
+        
+        <script>
+            (function() {
+                var input = document.getElementById('input');
+                var btn = document.getElementById('btn');
+                var lists = {
+                    todo: document.getElementById('todo'),
+                    done: document.getElementById('done')
+                };
+                
+                var makeTaskHtml = function(str) {
+                    var el = document.createElement ('li');
+                    el.textContent = str;
+                    
+                    return el;
+                };
+                
+                var addTask = function(list,task) {
+                    list.appendChild(task);
+                };
+                
+                addTask(lists.todo, makeTaskHtml('Test Task - todo'));
+                addTask(lists.done, makeTaskHtml('Test Task - done'));
+            }());
+            
+        </script>
+        
+  </body>
+</html>
+    
